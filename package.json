@@ -1,0 +1,33 @@
+{
+  "name": "tiny-params",
+  "version": "1.0.0",
+  "description": "A tiny URL param parser, suitable for server or browser",
+  "main": "index.js",
+  "files": ["index.js"],
+  "scripts": {
+    "test": "ava --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doesdev/tiny-params.git"
+  },
+  "keywords": [
+    "url",
+    "uri",
+    "param",
+    "params",
+    "parameter",
+    "parse",
+    "parser",
+    "parsing"
+  ],
+  "author": "Andrew Carpenter (https://github.com/doesdev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doesdev/tiny-params/issues"
+  },
+  "homepage": "https://github.com/doesdev/tiny-params#readme",
+  "devDependencies": {
+    "ava": "^0.18.2"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "tiny-params",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A tiny URL param parser, suitable for server or browser",
   "main": "index.js",
   "files": ["index.js"],

@@ -3,7 +3,7 @@
 // export
 module.exports = (url) => {
   if (!url || url === '' || !/\?/.test(url)) return {}
-  var q = url.split(/\?(.+)?/)[1]
+  var q = url.split(/\?(.+)?/)[1] || ''
   var obj = {}
   var ary = q.split('&')
   ary.forEach((q) => {

@@ -1,4 +1,4 @@
-# tiny-params [![NPM version](https://badge.fury.io/js/tiny-params.svg)](https://npmjs.org/package/tiny-params)   [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+# tiny-params [![NPM version](https://badge.fury.io/js/tiny-params.svg)](https://npmjs.org/package/tiny-params)   [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)   [![Dependency Status](https://dependencyci.com/github/doesdev/tiny-params/badge)](https://dependencyci.com/github/doesdev/tiny-params)
 
 > A tiny URL param parser, suitable for server or browser
 

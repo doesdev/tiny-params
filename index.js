@@ -2,8 +2,11 @@
 
 // export
 var tinyParams = (url) => {
-  if (!url || url === '' || !/\?/.test(url)) return {}
-  let q = url.split(/\?(.+)?/)[1] || '';
+  if (!url) return {}
+  let qIdx = url.indexOf('?');
+  if (qIdx === -1) return {}
+  let q = url.slice(qIdx + 1);
+  if (!q) return {}
   let obj = {};
   let ary = q.split('&');
   ary.forEach((q) => {

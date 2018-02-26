@@ -1,8 +1,11 @@
 // export
 
 var tinyParams = (function (url) {
-  if (!url || url === '' || !/\?/.test(url)) return {};
-  var q = url.split(/\?(.+)?/)[1] || '';
+  if (!url) return {};
+  var qIdx = url.indexOf('?');
+  if (qIdx === -1) return {};
+  var q = url.slice(qIdx + 1);
+  if (!q) return {};
   var obj = {};
   var ary = q.split('&');
   ary.forEach(function (q) {

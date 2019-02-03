@@ -1,6 +1,6 @@
 'use strict'
 
-const tp = require('./index')
+const tp = require('./index.js')
 const q = [
   `ary=a`,
   `ary[]=b`,

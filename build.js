@@ -1,15 +1,24 @@
 'use strict'
 
 const fs = require('fs')
-const cjsMod = fs.readFileSync('index.js', 'utf8')
-const esMod = cjsMod.replace('module.exports = ', 'export default ')
+const cjsModFile = 'index.js'
+const esModFile = 'module.mjs'
+const cjsTestFile = 'test.js'
+const esTestFile = 'test.mjs'
 
-fs.writeFileSync('module.mjs', esMod, 'utf8')
+if (process.argv.some((a) => a === '--unbuild')) {
+  fs.unlinkSync(esTestFile)
+} else {
+  const cjsMod = fs.readFileSync(cjsModFile, 'utf8')
+  const esMod = cjsMod.replace('module.exports = ', 'export default ')
 
-const cjsTest = fs.readFileSync('test.js', 'utf8')
-const esTest = cjsTest.replace(
-  `const tp = require('./index')`,
-  `import tp from './module'`
-).replace('CommonJS', 'ES')
+  fs.writeFileSync(esModFile, esMod, 'utf8')
 
-fs.writeFileSync('test.mjs', esTest, 'utf8')
+  const cjsTest = fs.readFileSync(cjsTestFile, 'utf8')
+  const esTest = cjsTest.replace(
+    `const tp = require('./${cjsModFile}')`,
+    `import tp from './${esModFile}'`
+  ).replace('CommonJS', 'ES')
+
+  fs.writeFileSync(esTestFile, esTest, 'utf8')
+}

@@ -9,7 +9,10 @@
     "module.mjs"
   ],
   "scripts": {
-    "test": "node build && node --experimental-modules test.mjs && node test.js"
+    "build": "node build",
+    "test": "npm run estest && node test.js && npm run clearTestFile",
+    "estest": "node build && node --experimental-modules test.mjs",
+    "clearTestFile": "node build --unbuild"
   },
   "repository": {
     "type": "git",

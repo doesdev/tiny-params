@@ -1,6 +1,6 @@
 'use strict'
 
-const tp = require('./index')
+import tp from './module'
 const q = [
   `ary=a`,
   `ary[]=b`,
@@ -15,7 +15,7 @@ const q = [
 const p = tp(`http://localhost:80/base/path/resource?${q}`)
 
 const start = () => {
-  process.stdout.write(`\nStarting on tests in CommonJS module\n`)
+  process.stdout.write(`\nStarting on tests in ES module\n`)
 }
 
 const finish = () => {

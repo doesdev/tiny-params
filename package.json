@@ -1,6 +1,6 @@
 {
   "name": "tiny-params",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A tiny URL param parser, suitable for server or browser",
   "main": "index.js",
   "module": "module.mjs",
@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "node build",
-    "test": "npm run estest && node test.js && npm run clearTestFile",
+    "test": "standard && npm run estest && node test.js && npm run clearTestFile",
     "estest": "node build && node --experimental-modules test.mjs",
     "clearTestFile": "node build --unbuild"
   },
@@ -38,5 +38,7 @@
   },
   "homepage": "https://github.com/doesdev/tiny-params#readme",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
 }

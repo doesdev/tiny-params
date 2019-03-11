@@ -18,7 +18,7 @@
 - it ships with both ES6 and CommonJS modules
 - it's competitively fast (use memoization in front of it to get really fast)
 - it makes repeated keys an array `?a=1&a=2` -> `{ a: ['1', '2'] }`
-- it makes handles explicit arrays `?a[]=1` -> `{ a: ['1'] }`
+- it handles explicit arrays `?a[]=1` -> `{ a: ['1'] }`
 - it decodes `encodeURIComponent` encoded items
 
 ## lowlights

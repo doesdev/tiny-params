@@ -14,7 +14,8 @@ const q = [
   `flag`,
   `amp=%26`,
   `eq=%3D`,
-  `ary=c`
+  `ary=c`,
+  `#we=are&totally=done`
 ].join('&')
 const p = tp(`http://localhost:80/base/path/resource?${q}`)
 
@@ -37,6 +38,8 @@ runTests('Testing tiny-params CommonJS module', () => {
     JSON.stringify(p.ary),
     '["a","b","c"]'
   )
+
+  test('It ignores things after #', !p.we && !p.totally)
 
   test('Parse undefined', () => tp())
   test('Parse empty string', () => tp(''))

@@ -6,8 +6,9 @@ function bool (v) { return v === 'false' ? false : (v === 'true' ? true : v) }
 function conv (v) { return bool(num(v)) }
 
 module.exports = function (u) {
-  var qI, qU
+  var qI, qU, hI
   if (!u || (qI = u.indexOf('?')) === -1 || !(qU = u.slice(qI + 1))) return {}
+  if ((hI = qU.indexOf('#')) !== -1 && !(qU = qU.slice(0, hI))) return {}
   var obj = {}
   qU.split('&').forEach(function (q) {
     q = ((q = q.split('=')) && q.length === 2 ? q : [q[0], 'true']).map(decode)

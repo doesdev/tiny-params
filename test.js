@@ -11,6 +11,8 @@ const q = [
   `zip=37615`,
   `last=carpenter`,
   `zip=37601&q=%3F`,
+  `number=22.55`,
+  `nil=undefined`,
   `flag`,
   `amp=%26`,
   `eq=%3D`,
@@ -25,6 +27,8 @@ runTests('Testing tiny-params CommonJS module', () => {
   test('Encoded question mark is correctly parsed', p.q, '?')
   test('Encoded ampersand is correctly parsed', p.amp, '&')
   test('Encoded equal sign is correctly parsed', p.eq, '=')
+  test('Numeric value parses as such', p.number, 22.55)
+  test('Null and undefined stings parse as null', p.nil, null)
   test('Boolean value parses as such', p.boolval, false)
   test('Flag (key with no value) parses to true', p.flag, true)
 

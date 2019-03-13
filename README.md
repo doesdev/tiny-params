@@ -13,15 +13,17 @@
 > A tiny URL param parser, suitable for server or browser
 
 ## highlights
-- it's tiny (< 20 sloc)
+- it's tiny (< 25 sloc)
 - it's highly browser compatible (IE6 and everything else)
 - it ships with both ES6 and CommonJS modules
-- it's competitively fast (use memoization in front of it to get really fast)
 - it makes repeated keys an array `?a=1&a=2` -> `{ a: [1, 2] }`
 - it handles explicit arrays `?a[]=1` -> `{ a: [1] }`
 - it handles flags (key with no value) `?a=b&flag` -> `{ a: 'b', flag: true }`
 - it decodes `encodeURIComponent` encoded items
 - it converts booleans and numbers from strings
+- it converts the values `'null'` and `'undefined'` to `null`
+- it respects the hash (as per [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3.4))
+- it's competitively fast (not the fastest, not far from it)
 
 ## lowlights
 - it looks like code golf, kind of is

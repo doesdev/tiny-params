@@ -17,6 +17,7 @@ const q = [
   `amp=%26`,
   `eq=%3D`,
   `ary=c`,
+  `encodedAry%5B%5D=1`,
   `#we=are&totally=done`
 ].join('&')
 const p = tp(`http://localhost:80/base/path/resource?${q}`)
@@ -41,6 +42,11 @@ runTests('Testing tiny-params CommonJS module', () => {
     'Array values are correctly parsed',
     JSON.stringify(p.ary),
     '["a","b","c"]'
+  )
+  test(
+    'Encoded array values are correctly parsed',
+    JSON.stringify(p.encodedAry),
+    '[1]'
   )
 
   test('It ignores things after #', !p.we && !p.totally)

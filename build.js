@@ -17,7 +17,7 @@ if (process.argv.some((a) => a === '--unbuild')) {
   const cjsTest = fs.readFileSync(cjsTestFile, 'utf8')
   const esTest = cjsTest.replace(
     /const (.+?) = require\((.+?)\)/g,
-    `import $1 from $2`
+    'import $1 from $2'
   ).replace('CommonJS', 'ES')
 
   fs.writeFileSync(esTestFile, esTest, 'utf8')

@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "node build",
-    "test": "standard && node test.js && npm run estest && npm run clearTestFile",
+    "test": "node test.js && npm run estest && npm run clearTestFile",
     "estest": "node build && node --experimental-modules test.mjs",
     "clearTestFile": "node build --unbuild"
   },
@@ -39,7 +39,6 @@
   "homepage": "http://tiny-params.doesdev.com",
   "dependencies": {},
   "devDependencies": {
-    "mvt": "^4.0.0",
-    "standard": "^14.0.2"
+    "mvt": "^4.1.0"
   }
 }
